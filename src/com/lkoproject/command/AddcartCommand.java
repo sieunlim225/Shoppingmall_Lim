@@ -18,20 +18,18 @@ public class AddcartCommand implements MCommand{
       request.setCharacterEncoding("EUC-KR");
       HttpSession Session = request.getSession();      
       String itemNo = request.getParameter("item_no");
-      String delivery =request.getParameter("delivery");
       String size =request.getParameter("size");
       String amount =   request.getParameter("amount");
       String id = (String)Session.getAttribute("userId");
       
       System.out.println(itemNo);
-      System.out.println(delivery);
       System.out.println(size);
       System.out.println(amount);
       System.out.println(id);
       
       ProductDAO dao = new ProductDAO();
       
-      int i = dao.addCart(itemNo,delivery,size,amount,id);
+      int i = dao.addCart(itemNo,size,amount,id);
       
       response.getWriter().write(i+"");
       

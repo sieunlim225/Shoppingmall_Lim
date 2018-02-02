@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
+import com.lkoproject.memberdto.MyCartDTO;
 import com.lkoproject.memberdto.ProductDTO;
 
 public class ProductDAO {
@@ -217,7 +218,7 @@ public class ProductDAO {
 
    }
    
-   public int addCart(String itemNo,String delivery,String size,String amount,String id) {
+   public int addCart(String itemNo,String size,String amount,String id) {
 	      System.out.println("addCart");
 	      Connection con = null;
 	      PreparedStatement pstmt= null;
@@ -225,14 +226,12 @@ public class ProductDAO {
 	      
 	      try {
 	         con = datasource.getConnection();
-	         String query = "INSERT INTO mycart VALUES(?,?,?,?,?)";
+	         String query = "INSERT INTO mycart VALUES(?,?,?,?)";
 	         pstmt = con.prepareStatement(query);
 	         pstmt.setInt(1, Integer.parseInt(itemNo));
-	         pstmt.setString(2, delivery);
-	         pstmt.setString(3, size);
-	         pstmt.setInt(4, Integer.parseInt(amount));
-	         pstmt.setString(5, id);
-	         
+	         pstmt.setString(2, size);
+	         pstmt.setInt(3, Integer.parseInt(amount));
+	         pstmt.setString(4, id);
 	         int i = pstmt.executeUpdate();
 	         
 	         if(i == 1) {
@@ -245,6 +244,46 @@ public class ProductDAO {
 	      }finally {try {if(pstmt!=null)pstmt.close();if(con!=null)con.close();}catch(Exception e) {e.printStackTrace();}}
 	      return result;
 	   }
+   
+   
+   public ArrayList<MyCartDTO> cartView(String id){
+	   System.out.println("myCart()");
+	   ArrayList<MyCartDTO> dtos = new ArrayList<MyCartDTO>();
+	   Connection con = null;
+	   PreparedStatement pstmt= null;
+	   ResultSet rs= null;
+	   
+	   try {
+		   
+	         con = datasource.getConnection();
+	         String query = "SELECT mc.item_no,im.main_image,ii.title,ii.price,mc.item_size,mc.amount "
+	         		+ "FROM mycart mc,item_info ii,item_image im "
+	         		+ "WHERE mc.item_no=ii.item_no AND mc.item_no=im.item_no AND mc.id=?";
+	         pstmt = con.prepareStatement(query);
+	         pstmt.setString(1, id);
+	         rs = pstmt.executeQuery();
+	         
+	         while(rs.next()) {
+	        	 int no = rs.getInt("item_no");
+	        	 String im = rs.getString("main_image");
+	        	 String t = rs.getString("title");
+	        	 int p = rs.getInt("price");
+	        	 String s = rs.getString("item_size");
+	        	 int a = rs.getInt("amount");
+	        	 
+	        	 MyCartDTO dto = new MyCartDTO(no,im,t,p,s,a);
+	        	 
+	        	 dtos.add(dto);
+	        	 
+	         }
+	         
+	   }catch(Exception e) {
+	         e.printStackTrace();
+	      }finally {try {if(rs!=null)rs.close();if(pstmt!=null)pstmt.close();if(con!=null)con.close();}catch(Exception e) {e.printStackTrace();}}
+	      
+	return dtos;
+	   
+   }//카트 메서드
 	      
 	}
    
