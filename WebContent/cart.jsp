@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,50 +43,38 @@
 									<th>선택</th>
 									<th>상품</th>
 									<th>상품명</th>
+									<th>사이즈</th>
 									<th>수량</th>
 									<th>상품 금액</th>
 									<th>총 상품 금액</th>
 								</tr>
 							</thead>
 							<tbody>
+							<c:set var="totals" value="0"/>
+							<c:forEach items="${list}" var="dto">
+							
 								<tr>
 									<td><input type="checkbox" value="option1"></td>
-									<td><a href="product_detail.jsp"><img alt="" src="themes/images/ladies/9.jpg"></a></td>
-									<td>Fusce id molestie massa</td>
-									<td><input type="text" placeholder="1" class="input-mini"></td>
-									<td>$2,350.00</td>
-									<td>$2,350.00</td>
+									<td><a href="product_detail.mvc?item_id=${dto.itemNo}"><img alt="" src="./savefolder/${dto.mainImage}"></a></td>
+									<td>${dto.title}</td>
+									<td>${dto.size}</td>
+									<td><input type="number" class="input-mini" value="${dto.amount}"></td>
+									<td>${dto.price}</td>
+									<td>${dto.price*dto.amount}</td>
+								<c:set var="totals" value="${totals+dto.price*dto.amount}"/>
 								</tr>			  
-								<tr>
-									<td><input type="checkbox" value="option1"></td>
-									<td><a href="product_detail.jsp"><img alt="" src="themes/images/ladies/1.jpg"></a></td>
-									<td>Luctus quam ultrices rutrum</td>
-									<td><input type="text" placeholder="2" class="input-mini"></td>
-									<td>$1,150.00</td>
-									<td>$2,450.00</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" value="option1"></td>
-									<td><a href="product_detail.jsp"><img alt="" src="themes/images/ladies/3.jpg"></a></td>
-									<td>Wuam ultrices rutrum</td>
-									<td><input type="text" placeholder="1" class="input-mini"></td>
-									<td>$1,210.00</td>
-									<td>$1,123.00</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td><strong>$3,600.00</strong></td>
-								</tr>		  
+							</c:forEach>
+										  
 							</tbody>
 						</table>
 						
 						<hr>
 						<p class="cart-total right">
-							<strong>배송비</strong>: $2.00<br>
+							<strong>배송 방식</strong>:
+							<select>
+								<option></option>
+							</select>
+							<strong>배송비</strong>:${totals}<br>
 							<strong>총 주문 금액</strong>: $119.50<br>
 						</p>
 						<hr/>
@@ -108,6 +97,8 @@
 					document.location.href = "checkout.jsp";
 				})
 			});
+
+				
 		</script>		
 </body>
 </html>
