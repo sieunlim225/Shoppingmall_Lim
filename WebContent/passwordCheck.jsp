@@ -49,7 +49,7 @@
 				
 			<section class="header_text sub">
 			<img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
-				<h4><span>로그인</span></h4>
+				<h4><span>ID / PW</span></h4>
 			</section>			
 			<section class="main-content">				
 				<div class="row">
@@ -57,31 +57,31 @@
 			</div>
 					<div class="span5 center" id="loginspan">					
 						
-						<form action="login_check.mvc" method="post">
+						<form action="password_check.mvc" method="post">
 							<input type="hidden" name="next" value="/">
 							 <table class="table table-bordered table-hover" style="text-align:center; border: 1px solid #dddddd">
 								<thead> 
 								 <tr>
-                                 <th colspan="2"><h4 class="center">로그인</h4></th>                              
+                                 <th colspan="2"><h4 class="center">비밀번호를 잊으셨나요?</h4></th>                              
                               </tr>
                               </thead>
 								
 									<tr>
 									<td style="width: 100px;"><h5>아이디</h5></td>
-									<td>	<input class="form-control" type="text" name="id" placeholder="아이디를 입력해주세요" id="username" class="input-xlarge" required></td>
+									<td>	<input class="form-control" type="text" name="id" placeholder="아이디을 입력해주세요" id="userId" class="input-xlarge" required></td>
 									</tr>
 								
 									<tr>
-									<td style="width: 100px;"><h5>비밀번호</h5></td>
-										<td><input class="form-control" type="password" name="pw" placeholder="비밀번호를 입력해주세요" id="password" class="input-xlarge" required></td>
+									<td style="width: 100px;"><h5>E-mail</h5></td>
+										<td><input class="form-control" type="text" name="email" placeholder="e-mail을 입력해주세요" id="userEmail" class="input-xlarge" required></td>
 									</tr>
 								
 									<tr>
 									<td colspan="3" class="center">
 									
-									<input class="btn btn-inverse large" type="submit" value="로그인">
-									<input class="btn btn-inverse large" type="button" onclick="location.href = 'register.jsp'" value="회원가입">
-									<p class="reset">혹시 <a tabindex="4" href="logincheck.jsp" title="Recover your username or password">아이디 혹은 비밀번호</a>를 잊으셨나요?</p>
+									<input class="btn btn-inverse large" type="submit" value="확인">
+									
+									
 									</td>
 									</tr>
 									

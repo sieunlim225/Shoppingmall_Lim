@@ -195,7 +195,7 @@
 							<%= messageContent %>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+							<button type="button" class="btn btn-inverse" data-dismiss="modal">확인</button>
 						</div>
 					</div>
 				</div>
@@ -226,7 +226,7 @@
 						<div class="modal-body" id="checkMessage" style="font-size:15pt; text-align:center">
 						</div>
 						<div class="modal-footer">
-							<button id="retry" type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+							<button id="retry" type="button" class="btn btn-inverse" data-dismiss="modal">확인</button>
 						</div>
 					</div>
 				</div>
@@ -261,7 +261,7 @@
 		 	
 		 	
 		 	$(function (){
-		 		$('#registerCheck').click(function (){
+		 		$('#Check').click(function (){
 		 			
 		 			
 		 			
