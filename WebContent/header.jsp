@@ -33,7 +33,7 @@
                   <ul class="user-menu">
                      <li> ${userId} 님 환영합니다</li>
                <c:if test="${userId==null}">
-                     <li><a href="cart.jsp">장바구니</a></li>               
+                                  
                      <li><a href="login.mvc">로그인</a></li>
                      <li><a href="register.jsp">회원가입</a></li>   
                   
@@ -49,7 +49,7 @@
                </c:if>   
                
                <c:if test="${userId=='admin'}">
-               
+               		 <li><a href="cart.jsp">장바구니test</a></li>
                      <li><a href="admin/dashboard.jsp">관리자</a></li>
                      <li><a href="logout.mvc">로그아웃</a></li>   
 

@@ -28,15 +28,19 @@
 							
 							<!-- <li><a href="./contact.jsp">Contac Us</a></li> -->
 							
-							<li><a href="login.jsp">Login</a></li>
-							<li><a href="register.jsp">Register</a>							
+							<li><a href="./products.mvc?main_cate=men&pageNum=1">Men</a></li>
+							<li><a href="./products.mvc?main_cate=woman&pageNum=1">Women</a>
+							<li><a href="./products.mvc?main_cate=boys&pageNum=1">Boys</a>
+							<li><a href="./products.mvc?main_cate=girls&pageNum=1">Girls</a>							
 						</ul>					
 					</div>
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><a href="modify.jsp">My Account</a></li>
-							<li><a href="cart.jsp">Your Cart</a></li>
+							<li><a href="login.jsp">Login</a></li>
+							<li><a href="register.jsp">Register</a>
+							<li><a href="modify.mvc">My Account</a></li>
+							<li><a href="logout.mvc">Logout</a></li>
 							
 							
 						</ul>
