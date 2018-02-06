@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="productadmin.mvc?main_cate=men&sub_cate=top&pageNum=1">
+                    <a href="productadmin.mvc?main_cate=men&pageNum=1">
                         <i class="pe-7s-note2"></i>
                         <p>상품관리</p>
                     </a>

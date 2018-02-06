@@ -68,7 +68,12 @@ public class ProductAdminCommand implements MCommand{
 	      System.out.println("endPage:"+endPage);
 	      System.out.println("pageCount:"+pageCount);
 	      
+	    
 	      
+	    if (main_cate==null && sub_cate==null) {
+	    	System.out.println("전체상품 실행");
+	    	dtos = dao.list(startRow,endRow);
+	    }
 		if(count>0 && sub_cate == null) {
 			
 		dtos = dao.list(main_cate,startRow,endRow);
