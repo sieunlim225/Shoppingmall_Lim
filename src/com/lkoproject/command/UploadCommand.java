@@ -22,7 +22,7 @@ public class UploadCommand implements MCommand{
 		System.out.println("UploadCommand 실행");
 		MultipartRequest multi = null;
 		String path = request.getRealPath("/savefolder").replaceAll("\\\\", "/");
-		int size =  10*1024*1024;//10메가
+		int size =  20*1024*1024;//10메가
 		String formName = "";
 		String fileName = "";
 		File file = null;
