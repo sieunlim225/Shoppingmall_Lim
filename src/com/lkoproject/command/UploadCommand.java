@@ -62,6 +62,7 @@ public class UploadCommand implements MCommand{
 		String itemTitle = multi.getParameter("item_title");
 		String mainCate = multi.getParameter("main_cate");
 		String subCate = multi.getParameter("sub_cate");
+		
 		String itemCode = multi.getParameter("item_code");
 		String s = multi.getParameter("s_size");
 		String m = multi.getParameter("m_size");
@@ -124,7 +125,7 @@ public class UploadCommand implements MCommand{
 		}
 		
 		
-		return null;
+		return "productadmin.mvc";
 	}
 
 }

@@ -19,6 +19,7 @@ import com.lkoproject.command.LoginCommand;
 import com.lkoproject.command.MCommand;
 import com.lkoproject.command.ModifyActionCommand;
 import com.lkoproject.command.ModifyCommand;
+import com.lkoproject.command.ProductAdminCommand;
 import com.lkoproject.command.ProductViewCommand;
 import com.lkoproject.command.UploadCommand;
 import com.lkoproject.command.UserRegisterCheckCommand;
@@ -141,7 +142,10 @@ public class Controller extends HttpServlet {
 	          System.out.println("password_check.mvc");
 	          command = new passwordcheckCommand();
 	          viewPage = command.execute(request, response);
-	       }
+	       }else if(comm.equals("productadmin.mvc")) {
+	            command = new ProductAdminCommand();
+	            viewPage = command.execute(request, response);
+	        }
 
 		
 		

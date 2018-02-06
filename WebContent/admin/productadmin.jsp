@@ -135,22 +135,22 @@
                                         <tr>
                                         	
                                         	<td>${dto.itemNo}</td>
-                                        	<td>${dto2.mainCate}</td>
-                                        	<td>${dto2.subCate}</td>
-                                        	<td>${dto2.title}</td>
-                                        	<td>${dto2.itemCode}</td>
-                                        	<td>${dto2.price}원</td>
-                                        	<td>S :<br> ${dto2.s}</td>
-                                        	<td>M :<br> ${dto2.m}</td>
-                                        	<td>L :<br> ${dto2.l}</td>
-                                        	<td>XL :<br>${dto2.xl}</td>
-                                        	<td>개</td>
+                                        	<td>카테고리 값가저오기</td>
+                                        	<td>서브 카테고리 값가저오기</td>
+                                        	<td>${dto.title}</td>
+                                        	<td>${dto.itemCode}</td>
+                                        	<td>${dto.price}원</td>
+                                        	<td>S :<br> ${dto.s}</td>
+                                        	<td>M :<br> ${dto.m}</td>
+                                        	<td>L :<br> ${dto.l}</td>
+                                        	<td>XL :<br>${dto.xl}</td>
+                                        	<td>솔드 넣고 확인 개</td>
                                        	
-                                        	<td style="border-left:1px solid black">${dto2.mainImage}</td>
-                                        	<td>${dto2.image1}</td>
-                                        	<td>${dto2.image2}</td>
-                                        	<td>${dto2.image3}</td>
-                                           	<td>${dto2.contentImage}</td>
+                                        	<td style="border-left:1px solid black">${dto.mainImage}</td>
+                                        	<td>${dto.image1}</td>
+                                        	<td>${dto.image2}</td>
+                                        	<td>${dto.image3}</td>
+                                           	<td>${dto.contentImage}</td>
                                            	<td><button>수정</button><br><button>삭제</button></td>
                                         </tr>
                                        
