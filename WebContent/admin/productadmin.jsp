@@ -51,7 +51,7 @@
                                <ul class="nav navbar-nav navbar-left">
                          
                          <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=men&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										MEN
 										<b class="caret"></b>
@@ -59,13 +59,14 @@
 
                               </a>
                               <ul class="dropdown-menu">
+                              	<li><a href="./productadmin.mvc?main_cate=men&pageNum=1">전체보기</a></li>
                                 <li><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=1">상의</a></li>
                                 <li><a href="./productadmin.mvc?main_cate=men&sub_cate=bottom&pageNum=1">하의</a></li>
                                 <li><a href="./productadmin.mvc?main_cate=men&sub_cate=acc&pageNum=1">악세서리</a></li>
                               </ul>
                         </li>
                         <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=woman&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										WOMEN
 										<b class="caret"></b>
@@ -73,13 +74,14 @@
 
                               </a>
                               <ul class="dropdown-menu">
+                             	 <li><a href="./productadmin.mvc?main_cate=woman&pageNum=1">전체보기</a></li>
                                 <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=top&pageNum=1">상의</a></li>
                                 <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=bottom&pageNum=1">하의</a></li>
                                 <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=acc&pageNum=1">악세서리</a></li>
                               </ul>
                         </li>
                          <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=boys&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										BOYS
 										<b class="caret"></b>
@@ -87,13 +89,14 @@
 
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=top&pageNum=1">Boy's TOP (상의)</a></li>                           
-                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=bottom&pageNum=1">Boy's BOTTOM (하의)</a></li>
-                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=acc&pageNum=1">Boy's ACC (악세서리)</a></li>    
+                              <li><a href="./productadmin.mvc?main_cate=boys&pageNum=1">전체보기</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=top&pageNum=1">상의</a></li>                           
+                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=bottom&pageNum=1">하의</a></li>
+                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=acc&pageNum=1">악세서리</a></li>    
                               </ul>
                         </li>
                          <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=girls&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										GIRLS
 										<b class="caret"></b>
@@ -101,9 +104,10 @@
 
                               </a>
                               <ul class="dropdown-menu">
-                               <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=top&pageNum=1">Girl's TOP (상의)</a></li>                           
-                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=bottom&pageNum=1">Girl's BOTTOM (하의)</a></li>
-                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=acc&pageNum=1">Girl's ACC (악세서리)</a></li>
+                              <li><a href="./productadmin.mvc?main_cate=girls&pageNum=1">전체보기</a></li>
+                               <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=top&pageNum=1">상의</a></li>                           
+                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=bottom&pageNum=1">하의</a></li>
+                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=acc&pageNum=1">악세서리</a></li>
                               </ul>
                         </li>
 						<li class="separator hidden-lg hidden-md"></li>
@@ -144,7 +148,7 @@
                                         	<td>M :<br> ${dto.m}</td>
                                         	<td>L :<br> ${dto.l}</td>
                                         	<td>XL :<br>${dto.xl}</td>
-                                        	<td>솔드 넣고 확인 개</td>
+                                        	<td>0 개</td>
                                        	
                                         	<td style="border-left:1px solid black">${dto.mainImage}</td>
                                         	<td>${dto.image1}</td>
