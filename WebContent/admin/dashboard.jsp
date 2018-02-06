@@ -50,7 +50,7 @@
                         <div class="card">
 
                             <div class="header">
-                                <h4 class="title">미구현</h4>
+                                <h4 class="title">대시보드-미구현</h4>
                                 <p class="category">수정중</p>
                             </div>
                             <div class="content">
