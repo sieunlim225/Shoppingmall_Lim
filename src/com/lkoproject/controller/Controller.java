@@ -22,6 +22,8 @@ import com.lkoproject.command.ModifyCommand;
 import com.lkoproject.command.ProductViewCommand;
 import com.lkoproject.command.UploadCommand;
 import com.lkoproject.command.UserRegisterCheckCommand;
+import com.lkoproject.command.loginPasswordCommand;
+import com.lkoproject.command.passwordcheckCommand;
 
 /**
  * Servlet implementation class MController
@@ -130,7 +132,16 @@ public class Controller extends HttpServlet {
 	    }else if(comm.equals("addcart.mvc")) {
 	         command = new AddcartCommand();
 	         viewPage = command.execute(request, response);
-	      }
+	      }else if(comm.equals("loginpassword_check.mvc")) {
+	          System.out.println("loginpassword_check.mvc");
+	          command = new loginPasswordCommand();
+	          viewPage = command.execute(request, response);
+	       
+	       }else if(comm.equals("password_check.mvc")) {
+	          System.out.println("password_check.mvc");
+	          command = new passwordcheckCommand();
+	          viewPage = command.execute(request, response);
+	       }
 
 		
 		
