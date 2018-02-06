@@ -7,7 +7,6 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -50,7 +49,7 @@
                     	<div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">회원 검색</h4>
+                                <h4 class="title">회원 검색 - 미구현</h4>
                             </div>
                             <div class="content">
                                 <form action="" method="">
@@ -164,18 +163,10 @@
                                 <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
                             </div>
                             <div class="content">
-                                <div class="author">
-                                     <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
-
-                                      <h4 class="title">Mike Andrew<br />
-                                         <small>michael24</small>
-                                      </h4>
-                                    </a>
-                                </div>
-                                <p class="description text-center"> "Lamborghini Mercy <br>
-                                                    Your chick she so thirsty <br>
-                                                    I'm in that two seat Lambo"
+                                <p class="description text-center">홍길동</p>
+                                <p class="description text-center"> 010-1234-5678 <br>
+                                                    서울강남 <br>
+                                                    아파트
                                 </p>
                             </div>
                             <hr>

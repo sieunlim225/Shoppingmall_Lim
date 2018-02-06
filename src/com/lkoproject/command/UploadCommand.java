@@ -125,7 +125,7 @@ public class UploadCommand implements MCommand{
 		}
 		
 		
-		return "productadmin.mvc?pageNum=1";
+		return "productadmin.mvc?main_cate=men&pageNum=1";
 	}
 
 }
