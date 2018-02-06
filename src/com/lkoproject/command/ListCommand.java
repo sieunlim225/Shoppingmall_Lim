@@ -32,6 +32,15 @@ public class ListCommand implements MCommand{
       int startRow = (currentPage -1) * pageSize + 1;
       int endRow = currentPage * pageSize;
       int count =  dao.itemCount();
+      if(main_cate != null && main_cate != "") {
+    	  count =  dao.itemCount(main_cate);
+    	  	System.out.println("메인카테만 있음");
+    	  if(sub_cate != null && sub_cate != "") {
+    		  count =  dao.itemCount(main_cate,sub_cate);
+    			System.out.println("서브카테도 있음");
+    	  }
+      }
+      
       int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
       System.out.println(pageCount);
       int pageBlock = 9;
@@ -69,7 +78,7 @@ public class ListCommand implements MCommand{
       // 페이징 계산식
       
       
-      if(count > 0 && sub_cate == null) {      
+      if(count > 0 && (sub_cate == null || sub_cate == "")) {      
       dtos = dao.list(main_cate,startRow,endRow);
       request.setAttribute("main", main_cate);
       }else if(count > 0 && sub_cate != null){
