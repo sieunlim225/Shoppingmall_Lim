@@ -206,7 +206,7 @@
 			<div class="row">
 			<div class="col-md-12" style="text-align:center;">
 
-    			<button class="btn btn-info btn-fill" style="width:80px;height:40px;" onclick="postAction();">등록</button>
+    			<button class="btn btn-info btn-fill" style="width:80px;height:40px;" onclick="">상품수정</button> <!-- postAction(); -->
     			
 			</div>
 		<input id="pw" type="hidden">
