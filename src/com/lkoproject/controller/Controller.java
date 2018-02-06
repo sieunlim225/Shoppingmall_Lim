@@ -21,6 +21,7 @@ import com.lkoproject.command.LoginCommand;
 import com.lkoproject.command.MCommand;
 import com.lkoproject.command.ModifyActionCommand;
 import com.lkoproject.command.ModifyCommand;
+import com.lkoproject.command.MyCartCommand;
 import com.lkoproject.command.ProductAdminCommand;
 import com.lkoproject.command.ProductViewCommand;
 import com.lkoproject.command.UploadCommand;
@@ -142,7 +143,10 @@ public class Controller extends HttpServlet {
 	    }else if(comm.equals("addcart.mvc")) {
 	         command = new AddcartCommand();
 	         viewPage = command.execute(request, response);
-	      }else if(comm.equals("loginpassword_check.mvc")) {
+	      }else if(comm.equals("mycart.mvc")) {
+		         command = new MyCartCommand();
+		         viewPage = command.execute(request, response);
+		  }else if(comm.equals("loginpassword_check.mvc")) {
 	          System.out.println("loginpassword_check.mvc");
 	          command = new loginPasswordCommand();
 	          viewPage = command.execute(request, response);

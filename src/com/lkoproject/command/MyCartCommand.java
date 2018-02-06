@@ -15,6 +15,7 @@ public class MyCartCommand implements MCommand{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// TODO Auto-generated method stub
+		System.out.println("MyCartÄ¿¸Çµå");
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("userId");
 		System.out.println(id);

@@ -32,7 +32,7 @@
 		<link>
 			<name>WebContent/savefolder</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Shoppingmall/savefolder</locationURI>
+			<location>C:/Codelab/GitLab/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Shoppingmall/savefolder</location>
 		</link>
 	</linkedResources>
 </projectDescription>

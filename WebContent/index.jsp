@@ -82,7 +82,7 @@
                                        <li class="span3">
                                           <div class="product-box">
                                              <span class="sale_tag"></span>
-                                             <p><a href="product_detail.do"><img src="./savefolder/${best.mainImage}.jpg" alt="" /></a></p>
+                                               <p><a href="product_detail.mvc?item_id=${best.itemNo}"><img src="./savefolder/${best.mainImage}" alt="" /></a></p>
                                              <a href="product_detail.do" class="title">"${best.title}"</a><br/>
                                     
                                              <p class="price">"${best.price}"¿ø</p>
@@ -120,7 +120,7 @@
                                        <li class="span3">
                                           <div class="product-box">
                                              <span class="sale_tag"></span>
-                                             <p><a href="product_detail.do"><img src="./savefolder/${newB.mainImage}.jpg" alt="" /></a></p>
+                                             <p><a href="product_detail.mvc?item_id=${newB.itemNo}"><img src="./savefolder/${newB.mainImage}" alt="" /></a></p>
                                              <a href="product_detail.do" class="title">"${newB.title}"</a><br/>
                                     
                                              <p class="price">"${newB.price}"¿ø</p>

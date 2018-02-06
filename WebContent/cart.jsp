@@ -51,6 +51,8 @@
 							</thead>
 							<tbody>
 							<c:set var="totals" value="0"/>
+							
+							
 							<c:forEach items="${list}" var="dto">
 							
 								<tr>
@@ -71,11 +73,12 @@
 						<hr>
 						<p class="cart-total right">
 							<strong>배송 방식</strong>:
-							<select>
-								<option></option>
+							<select id="deli">
+								<option value="1">선불	(+2500원)</option>
+								<option value="0">착불</option>
 							</select>
-							<strong>배송비</strong>:${totals}<br>
-							<strong>총 주문 금액</strong>: $119.50<br>
+							<strong>배송비</strong>: ${deliMo}<br>
+							<strong>총 주문 금액</strong>: ${totals+deliMo}<br>
 						</p>
 						<hr/>
 						<p class="buttons center">				
@@ -93,9 +96,18 @@
 		<script src="themes/js/common.js"></script>
 		<script>
 			$(document).ready(function() {
+				if($('#deli').val()==1){
+					<c:set var="deliMo" value="2500"/>
+				}else{
+					<c:set var="deliMo" value="0"/>
+				}
 				$('#checkout').click(function (e) {
 					document.location.href = "checkout.jsp";
 				})
+								
+				
+				
+				
 			});
 
 				

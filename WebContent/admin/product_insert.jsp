@@ -82,8 +82,8 @@
 										<select name="main_cate">
 											<option>men</option> 
 											<option>woman</option>
-											<option>boy</option>
-											<option>girl</option>
+											<option>boys</option>
+											<option>girls</option>
 										</select><br>
 									<strong>카테고리_2: </strong>
 										<select name="sub_cate">

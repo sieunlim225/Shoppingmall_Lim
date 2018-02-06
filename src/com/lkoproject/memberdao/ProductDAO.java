@@ -337,7 +337,7 @@ public class ProductDAO {
    
    
    public ArrayList<MyCartDTO> cartView(String id){
-	   System.out.println("myCart()");
+	   System.out.println("cartView()");
 	   ArrayList<MyCartDTO> dtos = new ArrayList<MyCartDTO>();
 	   Connection con = null;
 	   PreparedStatement pstmt= null;

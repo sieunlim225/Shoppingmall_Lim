@@ -42,14 +42,14 @@
                
                <c:if test="${userId!=null&&userId!='admin'}">
                
-                     <li><a href="cart.jsp">장바구니</a></li>               
+                     <li><a href="mycart.mvc">장바구니</a></li>               
                      <li><a href="modify.mvc">회원정보</a></li>
                      <li><a href="logout.mvc">로그아웃</a></li>   
 
                </c:if>   
                
                <c:if test="${userId=='admin'}">
-               		 <li><a href="cart.jsp">장바구니test</a></li>
+               		 <li><a href="mycart.mvc">장바구니test</a></li>
                      <li><a href="admin/dashboard.jsp">관리자</a></li>
                      <li><a href="logout.mvc">로그아웃</a></li>   
 
