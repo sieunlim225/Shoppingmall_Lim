@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.lkoproject.command.AddcartCommand;
+import com.lkoproject.command.AdminProducDropCommand;
+import com.lkoproject.command.AdminProducModifyCommand;
 import com.lkoproject.command.CheckoutCommand;
 import com.lkoproject.command.CheckoutProductCommand;
 import com.lkoproject.command.JoinCommand;
@@ -23,6 +25,7 @@ import com.lkoproject.command.ProductAdminCommand;
 import com.lkoproject.command.ProductViewCommand;
 import com.lkoproject.command.UploadCommand;
 import com.lkoproject.command.UserRegisterCheckCommand;
+import com.lkoproject.command.indexCommand;
 import com.lkoproject.command.loginPasswordCommand;
 import com.lkoproject.command.passwordcheckCommand;
 
@@ -115,7 +118,13 @@ public class Controller extends HttpServlet {
 			System.out.println(session.getId());
 			viewPage = "index.jsp";		
 		// 여기까지 회원관련 	
-		}else if(comm.equals("products.mvc")) {
+		}else if(comm.equals("index.mvc")) {
+	         command = new indexCommand();
+	         viewPage = command.execute(request,response);
+	         /*viewPage = "products.jsp";*/   
+	      }
+		
+		else if(comm.equals("products.mvc")) {
 			command = new ListCommand();
 			viewPage = command.execute(request,response);
 			/*viewPage = "products.jsp";*/	
@@ -144,6 +153,12 @@ public class Controller extends HttpServlet {
 	          viewPage = command.execute(request, response);
 	       }else if(comm.equals("productadmin.mvc")) {
 	            command = new ProductAdminCommand();
+	            viewPage = command.execute(request, response);
+	        }else if(comm.equals("AdminProducModify.mvc")) {
+	            command = new AdminProducModifyCommand();
+	            viewPage = command.execute(request, response);
+	        }else if(comm.equals("AdminProducDrop.mvc")) {
+	            command = new AdminProducDropCommand();
 	            viewPage = command.execute(request, response);
 	        }
 

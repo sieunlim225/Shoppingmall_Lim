@@ -61,7 +61,7 @@
          
          <section class="navbar main-menu">
             <div class="navbar-inner main-menu">            
-               <a href="index.jsp" class="logo pull-left"><img src="themes/images/logo1.png" class="site_logo" alt=""></a>
+               <a href="index.mvc" class="logo pull-left"><img src="themes/images/logo1.png" class="site_logo" alt=""></a>
                <nav id="menu" class="pull-right" style="margin-right:38%">
                   <ul>
                      <li><a href="./products.mvc?main_cate=men&pageNum=1">MEN</a>               

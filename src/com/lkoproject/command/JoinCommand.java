@@ -60,6 +60,7 @@ public class JoinCommand implements MCommand{
 			out.println("<script>");
 			out.println("alert('오류오류 관리자에게 문의하십쇼')");
 			out.println("history.back()");
+			
 			out.println("</script>");
 		}
 		return null;

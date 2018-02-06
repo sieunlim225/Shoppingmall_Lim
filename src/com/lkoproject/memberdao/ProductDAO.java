@@ -442,9 +442,179 @@ public class ProductDAO {
 	   return count;
 	      
 	   }
+
+
+   public ArrayList<ProductDTO> newList() {
+         
+         System.out.println("인덱스리스트new()");      
+         ArrayList<ProductDTO> dtos = new ArrayList<ProductDTO>();     
+         Connection con = null;
+         PreparedStatement pstmt= null;
+         ResultSet rs= null;
+         try {
+            con = datasource.getConnection();        
+            String query = "SELECT * FROM "
+                   + "(SELECT rownum rn, item_no, title, price, main_image "
+                   + "FROM (SELECT ii.item_no, ii.title, ii.price, im.main_image "
+                   + "FROM item_info ii, item_image im "
+                   + "WHERE ii.item_no=im.item_no ORDER BY ii.upload DESC)) "
+                   + "WHERE rn between 1 AND 8";
+              pstmt = con.prepareStatement(query);    
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+               ProductDTO dto = new ProductDTO();
+               dto.setItemNo(rs.getInt("item_no"));
+               dto.setTitle(rs.getString("title"));
+               dto.setPrice(rs.getString("price"));       
+               dto.setMainImage(rs.getString("main_image"));
+               System.out.println(dto);
+               dtos.add(dto);
+            }
+            System.out.println("추가완료");
+            
+         }catch(Exception e) {
+            e.printStackTrace();
+         }finally {try {if(rs!=null)rs.close();if(pstmt!=null)pstmt.close();if(con!=null)con.close();}catch(Exception e) {e.printStackTrace();}}
+         
+         return dtos;
+      }
+   
+   public ArrayList<ProductDTO>bsetList() {
+         
+         System.out.println("인덱스리스트best()");      
+         ArrayList<ProductDTO> dtos = new ArrayList<ProductDTO>();     
+         Connection con = null;
+         PreparedStatement pstmt= null;
+         ResultSet rs= null;
+         try {
+            con = datasource.getConnection();        
+            String query = "SELECT * FROM "
+                  + "(SELECT rownum rn, item_no, title, price, main_image "
+                   + "FROM (SELECT ii.item_no, ii.title, ii.price, im.main_image "
+                   + "FROM item_info ii, item_image im "
+                   + "WHERE ii.item_no=im.item_no ORDER BY ii.sold DESC)) "
+                   + "WHERE rn between 1 AND 8";
+              pstmt = con.prepareStatement(query);    
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+               ProductDTO dto = new ProductDTO();
+               dto.setItemNo(rs.getInt("item_no"));
+               dto.setTitle(rs.getString("title"));
+               dto.setPrice(rs.getString("price"));       
+               dto.setMainImage(rs.getString("main_image"));
+               System.out.println(dto);
+               dtos.add(dto);
+            }
+            System.out.println("추가완료");
+            
+         }catch(Exception e) {
+            e.printStackTrace();
+         }finally {try {if(rs!=null)rs.close();if(pstmt!=null)pstmt.close();if(con!=null)con.close();}catch(Exception e) {e.printStackTrace();}}
+         
+         return dtos;
+      }
+
+public int admindrop(ProductDTO dto) {
+	Connection con = null;
+	PreparedStatement pstmt =null;
+	int result = 0;
+	try {
+		con = datasource.getConnection();
+		String query1 = "DELETE FROM item_info where item_no=?";
+			pstmt = con.prepareStatement(query1);
+			pstmt.setInt(1, dto.getItemNo());
+			int rs1 = pstmt.executeUpdate();
+			System.out.println(rs1);
+		String query2 = "DELETE FROM item_image where item_no=?";
+		pstmt = con.prepareStatement(query2);
+		pstmt.setInt(1, dto.getItemNo());
+		int rs2 = pstmt.executeUpdate();
+		System.out.println(rs2);
+		
+		String query3 = "DELETE FROM item_amount where item_no=?";
+		pstmt = con.prepareStatement(query3);
+		pstmt.setInt(1, dto.getItemNo());
+		int rs3 = pstmt.executeUpdate();
+		System.out.println(rs3);
+		result = rs1+rs2+rs3;
+		if(result == 3) {
+			System.out.println("삭제성공");
+		}else {
+			System.out.println("삭제오류");
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	return result;	
+}
+
+public ProductDTO adminmodify(ProductDTO dto) {
+	// TODO Auto-generated method stub
+	Connection con = null;
+	PreparedStatement pstmt =null;
+	ResultSet rs1 = null;
+	ResultSet rs2 = null;
+	ResultSet rs3 = null;
+	ProductDTO dto1 = new ProductDTO();
+	
+	try {
+		con = datasource.getConnection();
+		String query1 = "SELECT * FROM item_info where item_no=?";
+			pstmt = con.prepareStatement(query1);
+			pstmt.setInt(1, dto.getItemNo());
+			rs1 = pstmt.executeQuery();
+			if(rs1.next()) {
+				
+	               dto1.setItemNo(rs1.getInt("item_no"));
+	               dto1.setTitle(rs1.getString("title"));
+	               
+	               
+	               
+	               dto1.setMainCate(rs1.getString("main_cate"));
+	               dto1.setSubCate(rs1.getString("sub_cate"));
+	               dto1.setItemCode(rs1.getString("item_code"));
+	               dto1.setPrice(rs1.getString("price")); 
+	               dto1.setContent(rs1.getString("content")); 
+	               dto1.setItemGroup(rs1.getInt("item_group"));
+	               dto1.setUpload(rs1.getTimestamp("upload"));
+    
+			}
+		String query2 = "SELECT * FROM item_image where item_no=?";
+			pstmt = con.prepareStatement(query2);
+			pstmt.setInt(1, dto.getItemNo());
+			rs2 = pstmt.executeQuery();
+			
+			if(rs2.next()) {
+				
+				 dto1.setMainImage(rs2.getString("main_image"));
+	             dto1.setImage1(rs2.getString("image1"));
+	             dto1.setImage2(rs2.getString("image2"));
+	             dto1.setImage3(rs2.getString("image3"));
+	             dto1.setContentImage(rs2.getString("content_image"));
+			}
+			
+		String query3 = "SELECT * FROM item_amount where item_no=?";
+			pstmt = con.prepareStatement(query3);
+			pstmt.setInt(1, dto.getItemNo());
+			rs3 = pstmt.executeQuery();
+			if(rs3.next()) {
+				
+				dto1.setS(rs3.getInt("s"));
+	            dto1.setM(rs3.getInt("m")); 
+	            dto1.setL(rs3.getInt("l")); 
+	            dto1.setXl(rs3.getInt("xl"));
+			}
+			
+} catch(Exception e) {
+	e.printStackTrace();
+}
+   return dto1;
+   
    
 	      
 	}
+
+}
    
    
       

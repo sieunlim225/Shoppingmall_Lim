@@ -131,14 +131,16 @@
                                         	<th>이미지2</th>
                                         	<th>이미지3</th>
                                            	<th>내용이미지</th>
-                                           	<th>수정삭제</th>
+                                           <th>수정삭제</th>
                                     </thead>
+                                    
                                     <c:forEach items="${list}" var="dto">
                                     
                                     <tbody>
                                         <tr>
-                                        	
+                                        	<form action="" method="post">
                                         	<td>${dto.itemNo}</td>
+                                        	<input name="item_no" type="hidden" value="${dto.itemNo}"/>
                                         	<td>${main}</td>
                                         	<td>${sub}</td>
                                         	<td>${dto.title}</td>
@@ -155,9 +157,21 @@
                                         	<td>${dto.image2}</td>
                                         	<td>${dto.image3}</td>
                                            	<td>${dto.contentImage}</td>
-                                           	<td><button>수정</button><br><button>삭제</button></td>
+                                           	<td>
+                                           	
+                                           	
+                                           	
+                                        
+                                        
+                                           	
+												<!-- <button type="submit" id="drop" >삭제</button> -->
+												<button type="submit" class="modify">수정</button><br>
+                                           	<button type="submit" class="drop" >삭제</button></td>
+											</form>
+											
                                         </tr>
-                                       
+                                         	<!-- <form action="AdminProducModify.mvc" method="post">
+    										<form action="AdminProducDrop.mvc" method="post">  -->
                                         
                                         
                                         
@@ -167,6 +181,8 @@
                                     
                                 </table>
 								<button id="pinsert" class="btn btn-info btn-fill pull-right">상품등록</button>
+								<button id="modify" class="btn btn-info btn-fill pull-right">수정</button>
+								<button id="drop" class="btn btn-info btn-fill pull-right">삭제</button>
 				<div class="container">
 					<div class="row">
 					<div class="col-md-5"></div>
@@ -204,41 +220,6 @@ $('#hi').click(function(){
 });
  */
  
-
- function postAction(){
-		var upForm = $('#upForm');
-		if($('.amounts').attr('value')=="")
-		{
-			$('.amounts').attr('value','0');
-		}
-		$('#pw').attr({
-			'name':'flag',
-			'value':'postWrite'
-		});
-		if($('#title').attr('value')=="")
-		{
-			alert('제목 ㄴㄴ');
-			return false;
-		}if($('#code').attr('value')=="")
-		{
-			alert('코드 ㄴㄴ');
-			return false;
-		}if($('#price').attr('value')=="")
-		{
-			alert('가격 ㄴㄴ');
-			return false;
-		}
-		
-		upForm.submit();
-}
-
- 
-		
-	
-	
-	
-
-
 
 
 </script>
@@ -297,6 +278,36 @@ $('#hi').click(function(){
     	$("#pinsert").click(function(){
         $("#showinsert").load("product_insert.jsp");
     });
+    	
+    	
+    	
+            
+             $('.drop').click(function () {
+            	 $('form').attr('action','AdminProducDrop.mvc').submit();
+                     
+                  }) 
+                 
+                  
+            
+            $('.modify').click(function () {
+            	$('form').attr('action','AdminProducModify.mvc');
+            	/* $("#showinsert").load("product_modify.jsp"); */
+              /*  ; */
+               
+               
+               
+               /* $('form').submit(); */
+              /*  $.ajax({
+                  url:'addcart.mvc',
+                  type:'post',
+                  data:$('#form').serialize(),   
+                  success:function(){
+                     
+                     }
+                  
+               }) */
+            })
+    	
 });
 	</script>
 </html>
