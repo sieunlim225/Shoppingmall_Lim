@@ -181,8 +181,7 @@
                                     
                                 </table>
 								<button id="pinsert" class="btn btn-info btn-fill pull-right">상품등록</button>
-								<button id="modify" class="btn btn-info btn-fill pull-right">수정</button>
-								<button id="drop" class="btn btn-info btn-fill pull-right">삭제</button>
+								
 				<div class="container">
 					<div class="row">
 					<div class="col-md-5"></div>
