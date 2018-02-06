@@ -26,12 +26,13 @@ public class ProductAdminCommand implements MCommand{
 	      int next = 0;
 	   
 	      
-	      int pageSize = 10;
+	      int pageSize = 20;
 	      String pageNum = request.getParameter("pageNum");
 	      int currentPage = Integer.parseInt(pageNum);
 	      int startRow = (currentPage -1) * pageSize + 1;
 	      int endRow = currentPage * pageSize;
 	      int count =  dao.itemCount();
+	      System.out.println(count);
 	      int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
 	      System.out.println(pageCount);
 	      int pageBlock = 9;
@@ -51,6 +52,7 @@ public class ProductAdminCommand implements MCommand{
 	      if(endPage > pageCount) {
 	         endPage = pageCount ;
 	      }
+	      System.out.println(endPage);
 	      
 	      String prevNum = startPage-10+"";
 	      String nextNum = startPage+10+"";
