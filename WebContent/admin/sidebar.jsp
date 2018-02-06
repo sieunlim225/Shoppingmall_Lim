@@ -50,31 +50,31 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li class="">
                     <a href="dashboard.jsp">
                         <i class="pe-7s-graph"></i>
                         <p>대시보드</p>
                     </a>
                 </li>
-                <li>
+                <li class="">
                     <a href="useradmin.jsp">
                         <i class="pe-7s-user"></i>
                         <p>회원관리</p>
                     </a>
                 </li>
-                <li>
+                <li class="">
                     <a href="productadmin.jsp">
                         <i class="pe-7s-note2"></i>
                         <p>상품관리</p>
                     </a>
                 </li>
-                <li>
+                <li class="">
                     <a href="checkoutadmin.jsp">
                         <i class="pe-7s-news-paper"></i>
                         <p>주문관리</p>
                     </a>
                 </li>
-                 <li>
+                 <li class="">
                     <a href="siteadmin.jsp">
                         <i class="pe-7s-browser"></i>
                         <p>사이트/이벤트 관리</p>

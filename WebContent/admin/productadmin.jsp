@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,134 +47,183 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Striped Table with Hover</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title">상품관리</h4> 
+                               <ul class="nav navbar-nav navbar-left">
+                         
+                         <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                    <p>
+										<a href="./productadmin.mvc?main_cate=men">MEN</a>
+										<b class="caret"></b>
+									</p>
+
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=top">상의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=bottom">하의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=acc">악세서리</a></li>
+                              </ul>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                    <p>
+										<a href="./productadmin.mvc?main_cate=woman">WOMEN</a>
+										<b class="caret"></b>
+									</p>
+
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=top">상의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=bottom">하의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=acc">악세서리</a></li>
+                              </ul>
+                        </li>
+                         <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                    <p>
+										<a href="./productadmin.mvc?main_cate=boys">BOYS</a>
+										<b class="caret"></b>
+									</p>
+
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=top">Boy's TOP (상의)</a></li>                           
+                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=bottom">Boy's BOTTOM (하의)</a></li>
+                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=acc">Boy's ACC (악세서리)</a></li>    
+                              </ul>
+                        </li>
+                         <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                    <p>
+										<a href="./productadmin.mvc?main_cate=girls">GIRLS</a>
+										<b class="caret"></b>
+									</p>
+
+                              </a>
+                              <ul class="dropdown-menu">
+                               <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=top">Girl's TOP (상의)</a></li>                           
+                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=bottom">Girl's BOTTOM (하의)</a></li>
+                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=acc">Girl's ACC (악세서리)</a></li>
+                              </ul>
+                        </li>
+						<li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+                                <!-- <p class="category">Here is a subtitle for this table</p> -->
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
-                                        <th>ID</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
+                                        <th>No</th>
+                                    	<th>카테고리</th>
+                                    	<th>카테고리2</th>
+                                    	<th>상품이름</th>
+                                    	<th>상품코드</th>
+                                    	<th>가격</th>
+                                    	<th colspan="4">수량</th>
+                                    	<th>판매수</th>
+                                    	
+                                    	<th style="border-left:1px solid black">메인이미지</th>
+                                        	<th>이미지1</th>
+                                        	<th>이미지2</th>
+                                        	<th>이미지3</th>
+                                           	<th>내용이미지</th>
+                                           	<th>수정삭제</th>
                                     </thead>
+                                    <c:forEach items="${list}" var="dto">
+                                    
                                     <tbody>
                                         <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
+                                        	
+                                        	<td>${dto.itemNo}</td>
+                                        	<td>${dto2.mainCate}</td>
+                                        	<td>${dto2.subCate}</td>
+                                        	<td>${dto2.title}</td>
+                                        	<td>${dto2.itemCode}</td>
+                                        	<td>${dto2.price}원</td>
+                                        	<td>S :<br> ${dto2.s}</td>
+                                        	<td>M :<br> ${dto2.m}</td>
+                                        	<td>L :<br> ${dto2.l}</td>
+                                        	<td>XL :<br>${dto2.xl}</td>
+                                        	<td>개</td>
+                                       	
+                                        	<td style="border-left:1px solid black">${dto2.mainImage}</td>
+                                        	<td>${dto2.image1}</td>
+                                        	<td>${dto2.image2}</td>
+                                        	<td>${dto2.image3}</td>
+                                           	<td>${dto2.contentImage}</td>
+                                           	<td><button>수정</button><br><button>삭제</button></td>
                                         </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Cura</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Krnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
+                                       
+                                        
+                                        
+                                        
                                     </tbody>
+                                    
+                                    </c:forEach>
+                                    
                                 </table>
-
+								<button id="pinsert" class="btn btn-info btn-fill	">상품등록</button>
                             </div>
                         </div>
                     </div>
+				<div id="showinsert" class="col-md-12">
+					<script type="text/javascript">
+
+/* $(document).ready(function(){
+$('#hi').click(function(){
+	
+	if($('.amounts').attr('value')=="")
+	{
+		
+		$('.amounts').attr('value','0');
+		alert($('.amounts').attr('value'));
+	}
+});
+});
+ */
+ 
+
+ function postAction(){
+		var upForm = $('#upForm');
+		if($('.amounts').attr('value')=="")
+		{
+			$('.amounts').attr('value','0');
+		}
+		$('#pw').attr({
+			'name':'flag',
+			'value':'postWrite'
+		});
+		if($('#title').attr('value')=="")
+		{
+			alert('제목 ㄴㄴ');
+			return false;
+		}if($('#code').attr('value')=="")
+		{
+			alert('코드 ㄴㄴ');
+			return false;
+		}if($('#price').attr('value')=="")
+		{
+			alert('가격 ㄴㄴ');
+			return false;
+		}
+		
+		upForm.submit();
+}
+
+ 
+		
+	
+	
+	
 
 
-                    <div class="col-md-12">
-                        <div class="card card-plain">
-                            <div class="header">
-                                <h4 class="title">Table on Plain Background</h4>
-                                <p class="category">Here is a subtitle for this table</p>
-                            </div>
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <th>ID</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaao</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Krnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
 
-                            </div>
-                        </div>
-                    </div>
 
+</script>
+				
+				</div>
+
+                   
 
                 </div>
             </div>
@@ -220,5 +270,11 @@
 
     	});
 	</script> -->
-
+	<script type="text/javascript">
+	$(document).ready(function(){
+    	$("#pinsert").click(function(){
+        $("#showinsert").load("product_insert.jsp");
+    });
+});
+	</script>
 </html>
