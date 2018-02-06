@@ -39,8 +39,8 @@ public class ProductDAO {
       try {
          con = datasource.getConnection();
          
-         String query = "SELECT ii.item_no, ii.title, ii.price, ii.content, im.main_image "
-               + "FROM item_info ii,item_image im WHERE ii.item_no=im.item_no AND ii.main_cate=?";
+         String query = "SELECT ii.item_no, ii.title, ii.price, ii.item_code, ii.content, ii.upload, im.main_image, im.image1 , im.image2 , im.image3, im.content_image, ia.s, ia.m, ia.l, ia.xl "
+                 + "FROM item_info ii,item_image im , item_amount ia WHERE ii.item_no=im.item_no AND ii.item_no=ia.item_no AND ii.main_cate=?";
          pstmt = con.prepareStatement(query);
          pstmt.setString(1, main_cate);
          rs = pstmt.executeQuery();
@@ -51,8 +51,17 @@ public class ProductDAO {
             dto.setItemNo(rs.getInt("item_no"));
             dto.setTitle(rs.getString("title"));
             dto.setPrice(rs.getString("price")); 
+            dto.setItemCode(rs.getString("item_code"));
+            dto.setUpload(rs.getTimestamp("upload"));
             dto.setMainImage(rs.getString("main_image"));
-            
+            dto.setImage1(rs.getString("image1"));
+            dto.setImage2(rs.getString("image2"));
+            dto.setImage3(rs.getString("image3"));
+            dto.setContentImage(rs.getString("content_image"));
+            dto.setS(rs.getInt("s"));
+            dto.setM(rs.getInt("m"));
+            dto.setL(rs.getInt("l"));
+            dto.setXl(rs.getInt("xl"));
             System.out.println(dto);
             dtos.add(dto);
          
@@ -77,8 +86,8 @@ public class ProductDAO {
       ResultSet rs= null;
       try {
          con = datasource.getConnection();
-         String query = "SELECT ii.item_no, ii.title, ii.price, ii.content, im.main_image "
-               + "FROM item_info ii,item_image im WHERE ii.item_no=im.item_no AND ii.main_cate=? AND ii.sub_cate=?";
+         String query = "SELECT ii.item_no, ii.title, ii.price, ii.item_code, ii.content, ii.upload, im.main_image, im.image1 , im.image2 , im.image3, im.content_image, ia.s, ia.m, ia.l, ia.xl "
+               + "FROM item_info ii,item_image im , item_amount ia WHERE ii.item_no=im.item_no AND ii.item_no=ia.item_no AND ii.main_cate=? AND ii.sub_cate=?";
          pstmt = con.prepareStatement(query);
          pstmt.setString(1, main_cate);
          pstmt.setString(2, sub_cate);
@@ -91,9 +100,20 @@ public class ProductDAO {
             dto.setItemNo(rs.getInt("item_no"));
             dto.setTitle(rs.getString("title"));
             dto.setPrice(rs.getString("price")); 
+            dto.setItemCode(rs.getString("item_code"));
+            dto.setUpload(rs.getTimestamp("upload"));
             dto.setMainImage(rs.getString("main_image"));
-            
+            dto.setImage1(rs.getString("image1"));
+            dto.setImage2(rs.getString("image2"));
+            dto.setImage3(rs.getString("image3"));
+            dto.setContentImage(rs.getString("content_image"));
+            dto.setS(rs.getInt("s"));
+            dto.setM(rs.getInt("m"));
+            dto.setL(rs.getInt("l"));
+            dto.setXl(rs.getInt("xl"));
+            System.out.println("l:");
             System.out.println(dto);
+            
             dtos.add(dto);
          
          }

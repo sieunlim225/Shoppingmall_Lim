@@ -51,9 +51,9 @@
                                <ul class="nav navbar-nav navbar-left">
                          
                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=men" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
-										<a href="./productadmin.mvc?main_cate=men">MEN</a>
+										MEN
 										<b class="caret"></b>
 									</p>
 
@@ -65,9 +65,9 @@
                               </ul>
                         </li>
                         <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=woman" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
-										<a href="./productadmin.mvc?main_cate=woman">WOMEN</a>
+										WOMEN
 										<b class="caret"></b>
 									</p>
 
@@ -79,9 +79,9 @@
                               </ul>
                         </li>
                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=boys" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
-										<a href="./productadmin.mvc?main_cate=boys">BOYS</a>
+										BOYS
 										<b class="caret"></b>
 									</p>
 
@@ -93,9 +93,9 @@
                               </ul>
                         </li>
                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=girls" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
-										<a href="./productadmin.mvc?main_cate=girls">GIRLS</a>
+										GIRLS
 										<b class="caret"></b>
 									</p>
 

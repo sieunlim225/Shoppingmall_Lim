@@ -34,12 +34,6 @@ public class ProductAdminCommand implements MCommand{
 		request.setAttribute("list", dtos);
 		System.out.println("º”º∫∏‘¿”");
 		//admin 
-		ProductDAO dao2 = new ProductDAO();
-	      ProductDTO dto2 = new ProductDTO();
-	      
-	      String itemNo = request.getParameter("item_no1");
-		dto2 = dao2.productView(itemNo);
-	      request.setAttribute("info", dto2);
 		
 		return "productadmin.jsp";
 	}
