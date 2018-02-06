@@ -51,7 +51,7 @@
 
             <ul class="nav">
                 <li class="">
-                    <a href="productadmin.jsp">
+                    <a href="dashboard.jsp">
                         <i class="pe-7s-graph"></i>
                         <p>대시보드</p>
                     </a>
@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="productadmin.jsp">
+                    <a href="productadmin.mvc?main_cate=men&sub_cate=top&pageNum=1">
                         <i class="pe-7s-note2"></i>
                         <p>상품관리</p>
                     </a>

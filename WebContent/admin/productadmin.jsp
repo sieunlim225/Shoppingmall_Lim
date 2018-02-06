@@ -168,13 +168,13 @@
 					<div class="col-md-5"></div>
                     <div class="col-md-3 center-text">
                          <c:if test="${prev == 1}">
-                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=${prevNum}">Prev</a></button>
+                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=${sub}&pageNum=${prevNum}">Prev</a></button>
                          </c:if>
                         <c:forEach begin="${startPage}" end="${endPage}" varStatus="i">
-                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=${i.index}">${i.index}</a></button>
+                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=${sub}&pageNum=${i.index}">${i.index}</a></button>
                         </c:forEach>
                         <c:if test="${next == 1}">
-                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=${nextNum}">Next</a></button>
+                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=${sub}&pageNum=${nextNum}">Next</a></button>
                         </c:if>
                      </div>
                      <div class="col-md-5"></div>
