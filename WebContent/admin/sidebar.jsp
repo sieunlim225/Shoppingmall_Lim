@@ -51,7 +51,7 @@
 
             <ul class="nav">
                 <li class="">
-                    <a href="dashboard.jsp">
+                    <a href="productadmin.jsp">
                         <i class="pe-7s-graph"></i>
                         <p>대시보드</p>
                     </a>

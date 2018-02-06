@@ -57,13 +57,17 @@
                   </ul>                        
                   <hr>
                   <div class="pagination pagination-small pagination-centered">
-                     <ul>
-                        <li><a href="#">Prev</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">Next</a></li>
+                  
+                    <ul>
+                         <c:if test="${prev == 1}">
+                        <li><a href="./products.mvc?main_cate=men&sub_cate=top&pageNum=${prevNum}">Prev</a></li>
+                         </c:if>
+                        <c:forEach begin="${startPage}" end="${endPage}" varStatus="i">
+                        <li><a href="./products.mvc?main_cate=men&sub_cate=top&pageNum=${i.index}">${i.index}</a></li>
+                        </c:forEach>
+                        <c:if test="${next == 1}">
+                        <li><a href="./products.mvc?main_cate=men&sub_cate=top&pageNum=${nextNum}">Next</a></li>
+                        </c:if>
                      </ul>
                   </div>
                </div>

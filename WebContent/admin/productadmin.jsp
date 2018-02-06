@@ -51,7 +51,7 @@
                                <ul class="nav navbar-nav navbar-left">
                          
                          <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=men" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=men&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										MEN
 										<b class="caret"></b>
@@ -59,13 +59,13 @@
 
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=top">상의</a></li>
-                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=bottom">하의</a></li>
-                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=acc">악세서리</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=1">상의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=bottom&pageNum=1">하의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=men&sub_cate=acc&pageNum=1">악세서리</a></li>
                               </ul>
                         </li>
                         <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=woman" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=woman&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										WOMEN
 										<b class="caret"></b>
@@ -73,13 +73,13 @@
 
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=top">상의</a></li>
-                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=bottom">하의</a></li>
-                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=acc">악세서리</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=top&pageNum=1">상의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=bottom&pageNum=1">하의</a></li>
+                                <li><a href="./productadmin.mvc?main_cate=woman&sub_cate=acc&pageNum=1">악세서리</a></li>
                               </ul>
                         </li>
                          <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=boys" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=boys&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										BOYS
 										<b class="caret"></b>
@@ -87,13 +87,13 @@
 
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=top">Boy's TOP (상의)</a></li>                           
-                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=bottom">Boy's BOTTOM (하의)</a></li>
-                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=acc">Boy's ACC (악세서리)</a></li>    
+                                <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=top&pageNum=1">Boy's TOP (상의)</a></li>                           
+                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=bottom&pageNum=1">Boy's BOTTOM (하의)</a></li>
+                           <li><a href="./productadmin.mvc?main_cate=boys&sub_cate=acc&pageNum=1">Boy's ACC (악세서리)</a></li>    
                               </ul>
                         </li>
                          <li class="dropdown">
-                              <a href="./productadmin.mvc?main_cate=girls" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                              <a href="./productadmin.mvc?main_cate=girls&pageNum=1" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <p>
 										GIRLS
 										<b class="caret"></b>
@@ -101,9 +101,9 @@
 
                               </a>
                               <ul class="dropdown-menu">
-                               <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=top">Girl's TOP (상의)</a></li>                           
-                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=bottom">Girl's BOTTOM (하의)</a></li>
-                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=acc">Girl's ACC (악세서리)</a></li>
+                               <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=top&pageNum=1">Girl's TOP (상의)</a></li>                           
+                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=bottom&pageNum=1">Girl's BOTTOM (하의)</a></li>
+                           <li><a href="./productadmin.mvc?main_cate=girls&sub_cate=acc&pageNum=1">Girl's ACC (악세서리)</a></li>
                               </ul>
                         </li>
 						<li class="separator hidden-lg hidden-md"></li>
@@ -135,8 +135,8 @@
                                         <tr>
                                         	
                                         	<td>${dto.itemNo}</td>
-                                        	<td>카테고리 값가저오기</td>
-                                        	<td>서브 카테고리 값가저오기</td>
+                                        	<td>${main}</td>
+                                        	<td>${sub}</td>
                                         	<td>${dto.title}</td>
                                         	<td>${dto.itemCode}</td>
                                         	<td>${dto.price}원</td>
@@ -162,7 +162,25 @@
                                     </c:forEach>
                                     
                                 </table>
-								<button id="pinsert" class="btn btn-info btn-fill	">상품등록</button>
+								<button id="pinsert" class="btn btn-info btn-fill pull-right">상품등록</button>
+				<div class="container">
+					<div class="row">
+					<div class="col-md-5"></div>
+                    <div class="col-md-3 center-text">
+                         <c:if test="${prev == 1}">
+                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=${prevNum}">Prev</a></button>
+                         </c:if>
+                        <c:forEach begin="${startPage}" end="${endPage}" varStatus="i">
+                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=${i.index}">${i.index}</a></button>
+                        </c:forEach>
+                        <c:if test="${next == 1}">
+                        <button><a href="./productadmin.mvc?main_cate=men&sub_cate=top&pageNum=${nextNum}">Next</a></button>
+                        </c:if>
+                     </div>
+                     <div class="col-md-5"></div>
+                     </div>
+                </div>
+								
                             </div>
                         </div>
                     </div>

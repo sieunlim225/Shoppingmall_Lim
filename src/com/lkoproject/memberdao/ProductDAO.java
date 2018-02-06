@@ -27,7 +27,7 @@ public class ProductDAO {
       }
    }
    
-   public ArrayList<ProductDTO> list(String main_cate) {
+   public ArrayList<ProductDTO> list(String main_cate, int startRow, int endRow) {
       
       System.out.println("리스트()");
       
@@ -39,10 +39,17 @@ public class ProductDAO {
       try {
          con = datasource.getConnection();
          
-         String query = "SELECT ii.item_no, ii.title, ii.price, ii.item_code, ii.content, ii.upload, im.main_image, im.image1 , im.image2 , im.image3, im.content_image, ia.s, ia.m, ia.l, ia.xl "
-                 + "FROM item_info ii,item_image im , item_amount ia WHERE ii.item_no=im.item_no AND ii.item_no=ia.item_no AND ii.main_cate=?";
-         pstmt = con.prepareStatement(query);
-         pstmt.setString(1, main_cate);
+         String query = "SELECT * FROM (SELECT rownum rn, ii.item_no, ii.title, ii.price, ii.item_code, ii.content, ii.upload, im.main_image, im.image1 , im.image2 , im.image3, im.content_image, ia.s, ia.m, ia.l, ia.xl "
+                 + "FROM (SELECT ii.item_no, ii.title, ii.price, ii.item_code, ii.content, ii.upload, im.main_image, im.image1 , im.image2 , im.image3, im.content_image, ia.s, ia.m, ia.l, ia.xl  "
+                 + "FROM item_info ii, item_image im,item_amount ia"
+                 + "WHERE ii.item_no=im.item_no AND ii.item_no=ia.item_no AND main_cate=? ORDER BY ii.item_no DESC)) "
+                 + "WHERE rn between ? AND ?";
+           
+           //item_info ii,item_image im WHERE ii.item_no=im.item_no AND ii.main_cate=?
+           pstmt = con.prepareStatement(query);
+           pstmt.setString(1, main_cate);
+           pstmt.setInt(2, startRow);
+           pstmt.setInt(3, endRow);
          rs = pstmt.executeQuery();
          while(rs.next()) {
             
@@ -75,7 +82,7 @@ public class ProductDAO {
       return dtos;
    }
    
-   public ArrayList<ProductDTO> list(String main_cate, String sub_cate) {
+   public ArrayList<ProductDTO> list(String main_cate, String sub_cate, int startRow, int endRow) {
       
       System.out.println("리스트()");
       
@@ -86,11 +93,17 @@ public class ProductDAO {
       ResultSet rs= null;
       try {
          con = datasource.getConnection();
-         String query = "SELECT ii.item_no, ii.title, ii.price, ii.item_code, ii.content, ii.upload, im.main_image, im.image1 , im.image2 , im.image3, im.content_image, ia.s, ia.m, ia.l, ia.xl "
-               + "FROM item_info ii,item_image im , item_amount ia WHERE ii.item_no=im.item_no AND ii.item_no=ia.item_no AND ii.main_cate=? AND ii.sub_cate=?";
+         String query = "SELECT * FROM "
+         		+ "(SELECT rownum rn, item_no, title, price, item_code, content, upload, main_image, image1 , image2 , image3, content_image, s, m, l, xl "
+         		+ "FROM (SELECT ii.item_no, ii.title, ii.price, ii.item_code, ii.content, ii.upload, im.main_image, im.image1 , im.image2 , im.image3, im.content_image, ia.s, ia.m, ia.l, ia.xl "
+         		+ "FROM item_info ii, item_image im,item_amount ia "
+         		+ "WHERE ii.item_no=im.item_no AND ii.item_no=ia.item_no AND ii.main_cate=? AND ii.sub_cate=? ORDER BY ii.item_no DESC)) "
+         		+ "WHERE rn between ? AND ?";
          pstmt = con.prepareStatement(query);
          pstmt.setString(1, main_cate);
          pstmt.setString(2, sub_cate);
+         pstmt.setInt(3, startRow);
+         pstmt.setInt(4, endRow);
          rs = pstmt.executeQuery();
          
          while(rs.next()) {
@@ -304,6 +317,28 @@ public class ProductDAO {
 	return dtos;
 	   
    }//카트 메서드
+   public int itemCount() {
+	      int count =0;
+	      String query = "select count(*) from item_info";
+	      Connection con = null;
+	      PreparedStatement pstmt= null;
+	      ResultSet rs= null;
+	       try {
+	          con = datasource.getConnection();
+	          pstmt = con.prepareStatement(query);
+	          rs = pstmt.executeQuery();
+	          if(rs.next()) {
+	             count = rs.getInt(1);
+	          }
+	         
+	      }catch(Exception e) {
+	         e.printStackTrace();
+	      }finally {try {if(rs!=null)rs.close();if(pstmt!=null)pstmt.close();if(con!=null)con.close();}catch(Exception e) {e.printStackTrace();}}
+	       
+	   return count;
+	      
+	   }
+   
 	      
 	}
    
