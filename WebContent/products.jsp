@@ -60,13 +60,13 @@
                   
                     <ul>
                          <c:if test="${prev == 1}">
-                        <li><a href="./products.mvc?main_cate=men&sub_cate=top&pageNum=${prevNum}">Prev</a></li>
+                        <li><a href="./products.mvc?main_cate=men&sub_cate=${sub}&pageNum=${prevNum}">Prev</a></li>
                          </c:if>
                         <c:forEach begin="${startPage}" end="${endPage}" varStatus="i">
-                        <li><a href="./products.mvc?main_cate=men&sub_cate=top&pageNum=${i.index}">${i.index}</a></li>
+                        <li><a href="./products.mvc?main_cate=men&sub_cate=${sub}&pageNum=${i.index}">${i.index}</a></li>
                         </c:forEach>
                         <c:if test="${next == 1}">
-                        <li><a href="./products.mvc?main_cate=men&sub_cate=top&pageNum=${nextNum}">Next</a></li>
+                        <li><a href="./products.mvc?main_cate=men&sub_cate=${sub}&pageNum=${nextNum}">Next</a></li>
                         </c:if>
                      </ul>
                   </div>
