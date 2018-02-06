@@ -44,7 +44,7 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="../index.jsp" class="simple-text">
+                <a href="../index.mvc" class="simple-text">
                     CRUMP
                 </a>
             </div>
