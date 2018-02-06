@@ -81,7 +81,7 @@
 									
 									<input class="btn btn-inverse large" type="submit" value="로그인">
 									<input class="btn btn-inverse large" type="button" onclick="location.href = 'register.jsp'" value="회원가입">
-									<p class="reset">혹시 <a tabindex="4" href="logincheck.jsp" title="Recover your username or password">아이디 혹은 비밀번호</a>를 잊으셨나요?</p>
+									<p class="reset">혹시 <a tabindex="4" href="#" title="Recover your username or password">아이디 혹은 비밀번호</a>를 잊으셨나요?</p>
 									</td>
 									</tr>
 									

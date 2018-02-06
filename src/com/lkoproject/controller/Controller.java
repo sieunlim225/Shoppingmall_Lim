@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.lkoproject.command.AddcartCommand;
 import com.lkoproject.command.CheckoutCommand;
+import com.lkoproject.command.CheckoutProductCommand;
 import com.lkoproject.command.JoinCommand;
 import com.lkoproject.command.ListCommand;
 import com.lkoproject.command.LoginCommand;
@@ -21,8 +22,6 @@ import com.lkoproject.command.ModifyCommand;
 import com.lkoproject.command.ProductViewCommand;
 import com.lkoproject.command.UploadCommand;
 import com.lkoproject.command.UserRegisterCheckCommand;
-import com.lkoproject.command.loginPasswordCommand;
-import com.lkoproject.command.passwordcheckCommand;
 
 /**
  * Servlet implementation class MController
@@ -99,17 +98,7 @@ public class Controller extends HttpServlet {
 			command = new LoginCommand();
 			viewPage = command.execute(request,response);
 			/*viewPage = "index.jsp";*/
-		}else if(comm.equals("loginpassword_check.mvc")) {
-			System.out.println("loginpassword_check.mvc");
-			command = new loginPasswordCommand();
-			viewPage = command.execute(request, response);
-		
-		}else if(comm.equals("password_check.mvc")) {
-			System.out.println("password_check.mvc");
-			command = new passwordcheckCommand();
-			viewPage = command.execute(request, response);
-		}
-		else if(comm.equals("modify.mvc")) {
+		}else if(comm.equals("modify.mvc")) {
 			command = new ModifyCommand();
 			viewPage = command.execute(request, response);
 		}else if(comm.equals("modify_action.mvc")) {
