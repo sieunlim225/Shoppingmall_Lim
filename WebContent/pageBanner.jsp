@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="fileFormOK.jsp" method="post" enctype="multipart/form-data">
-		ÆÄÀÏ(file): <img src=""><input type="file" name="file"><br>
-		<input type="submit" value="File Upload">
-	</form>
+	<img class="pageBanner" src="themes/images/pageBanner.jpg" alt="New products" >
 </body>
 </html>

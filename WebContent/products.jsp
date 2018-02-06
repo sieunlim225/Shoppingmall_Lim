@@ -30,8 +30,7 @@
          
          <section class="header_text sub">
          
-         <img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
-         <c:if test=""></c:if>
+        <jsp:include page="pageBanner.jsp"/>
             <h4><span>${main} ${sub}</span></h4>
             
          </section>

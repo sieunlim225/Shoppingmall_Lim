@@ -48,7 +48,7 @@
 		<div id="wrapper" class="container">
 				
 			<section class="header_text sub">
-			<img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
+			        <jsp:include page="pageBanner.jsp"/>
 				<h4><span>ID / PW</span></h4>
 			</section>			
 			<section class="main-content">				
