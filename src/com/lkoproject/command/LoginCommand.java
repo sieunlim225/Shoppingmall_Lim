@@ -36,7 +36,7 @@ public class LoginCommand implements MCommand{
 			if(session.getAttribute("userId")!=null){
 				out.println("<script>");
 				out.println("alert('이미로그인이 되어있습니다')");
-				out.println("location.href = 'index.jsp'");
+				out.println("location.href = 'index.mvc'");
 				out.println("</script>");}
 			
 			if(result == 1 ) {
@@ -46,7 +46,7 @@ public class LoginCommand implements MCommand{
 				
 				out.println("<script>");
 				out.println("alert('로그인성공')");
-				out.println("location.href='index.jsp'");
+				out.println("location.href='index.mvc'");
 				out.println("</script>");
 				System.out.println("로그인성공");
 				/*System.out.println("로그인 성공~!");*/

@@ -49,7 +49,7 @@
                </c:if>   
                
                <c:if test="${userId=='admin'}">
-               		 <li><a href="mycart.mvc">장바구니test</a></li>
+               		 
                      <li><a href="admin/dashboard.jsp">관리자</a></li>
                      <li><a href="logout.mvc">로그아웃</a></li>   
 
