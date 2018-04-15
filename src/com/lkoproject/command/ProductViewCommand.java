@@ -13,10 +13,10 @@ public class ProductViewCommand implements MCommand{
    @Override
    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
       
-      String itemNo = request.getParameter("item_id");
+      String strNo = request.getParameter("item_id");
       
       ProductDAO dao = new ProductDAO();
-      ProductDTO dto = dao.productView(itemNo);
+      ProductDTO dto = dao.productView(strNo);
       request.setAttribute("info", dto);
       
       return "product_detail.jsp";

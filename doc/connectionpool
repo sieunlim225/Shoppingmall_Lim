@@ -1,0 +1,13 @@
+#server context
+
+<Resource 
+   auth="Container" 
+   driverClassName = "oracle.jdbc.driver.OracleDriver"
+   url = "jdbc:oracle:thin:@localhost:1521:orcl"
+   username = "lkoproject"
+   password = "lkopassword_3"
+   name = "jdbc/Oracle11g"
+   type = "javax.sql.DataSource"
+   maxActive = "50"  
+   maxWait = "1000"
+   />
