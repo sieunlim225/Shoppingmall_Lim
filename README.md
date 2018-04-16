@@ -13,5 +13,9 @@
   - oracle 11g
   - Eclipse IDE for Java EE Developers
   
+* 구조
+  - Dynamic Web Project
+  - MVC2 patter
+  
 * PPT
   - https://goo.gl/kBx2HA
