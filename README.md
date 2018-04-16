@@ -14,7 +14,7 @@
   - Eclipse IDE for Java EE Developers
   
 * 구조
-  - Dynamic Web Project
+  - Dynamic Web Project
   - MVC2 patter
   
 * PPT
