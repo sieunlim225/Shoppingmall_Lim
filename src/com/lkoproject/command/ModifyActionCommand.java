@@ -36,7 +36,7 @@ public class ModifyActionCommand implements MCommand {
 
 			out.println("<script>");
 			out.println("alert('정보가 수정되었습니다')");
-			out.println("location.href = 'index.jsp'");
+			out.println("location.href = 'index.mvc'");
 			out.println("</script>");
 		}else {
 			out.println("<script>");

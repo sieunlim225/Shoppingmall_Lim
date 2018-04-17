@@ -117,7 +117,7 @@ public class Controller extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.invalidate();
 			System.out.println(session.getId());
-			viewPage = "index.jsp";		
+			viewPage = "index.mvc";		
 		// 여기까지 회원관련 	
 		}else if(comm.equals("index.mvc")) {
 	         command = new indexCommand();

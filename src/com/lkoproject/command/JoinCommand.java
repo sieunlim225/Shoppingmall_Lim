@@ -53,7 +53,7 @@ public class JoinCommand implements MCommand{
 			
 			out.println("<script>");
 			out.println("alert('회원이 된걸 축하행')");
-			out.println("location.href='index.jsp'");
+			out.println("location.href='index.mvc'");
 			out.println("</script>");
 			
 		}else{
